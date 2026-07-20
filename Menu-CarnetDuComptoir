@@ -1,81 +1,25 @@
-<!--
-Spiritueux & Alcools de base
-  Rhum : 
-    Rhum Blanc
-    Rhum Noir / Épicé
-  Vodka
-    Vodka classique
-  Tequila
-    Tequila (Blanco)
-  Gin
-    Gin classique (London Dry)
-  Whisky / Bourbon
-    Jack Daniel’s / Bourbon 
-    Scotch Whisky / Irish Whiskey
-  Brandy / Eau-de-vie
-    Cognac / Calvados (pour le French Mule)
-  Vin
-    Champagne / Effervescent
-
-Liqueurs, Aperitifs & Bitters
-  Liqueurs : 
-    Malibu (Liqueur de coco)
-    Triple Sec (Cointreau/Grand Marnier)
-    Curaçao Bleu
-    Liqueur de Café (Kahlúa)
-    Crème de Pêche / Peach Schnapps
-    Crème de Cassis
-    Amaretto
-  Bitters & Aperitifs : 
-    Campari
-    Vermouth Rouge (style Martini rouge)
-
-Sodas & Softs (Allongements)
-  Cola
-  Ginger Beer
-  Ginger Ale
-  Eau Pétillante / Soda
-  Tonic
-  Lemon-Lime Soda (Sprite / 7Up)
-
-Jus de Fruits
-  Jus de Citron Vert (frais)
-  Jus de Citron Jaune (frais)
-  Jus d'Ananas
-  Jus d'Orange
-  Jus de Cranberry
-  Jus de Pomme
-  Jus de Pamplemousse
-
-Sirops, Sucres & Produits Laitiers/Épais
-  Sirop de Sucre de Canne
-  Sirop de Grenadine
-  Crème de Coco
-  Crème fraîche liquide (pour le White Russian)
-  Œuf (Blanc d'œuf pour le Boston Sour)
-
-Garnitures, Épices & Herbes Fraîches
-  Herbes / Frais : 
-    Menthe fraîche
-    Basilic frais
-    Concombre.
-  Fruits :
-    Citrons jaunes
-    Citrons verts
-    Pamplemousse (bonus)
--->
 <!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>Le Carnet du Comptoir - Menu Imprimable A4 Portrait</title>
+    <title>Le Carnet du Comptoir - Menu</title>
     <style>
-      @page {
-        size: A4 portrait;
-        margin: 0;
-        background-color: #1a1a1a;
+      /* --- VARIABLES DE THÈMES --- */
+      body.theme-dark {
+        --bg-color: #1a1a1a;
+        --text-color: #f5f5f5;
+        --accent-color: #d4af37;
+        --muted-text: #cccccc;
       }
 
+      body.theme-light {
+        --bg-color: #ffffff;
+        --text-color: #111111;
+        --accent-color: #000000;
+        --muted-text: #555555;
+      }
+
+      /* --- REGLES GÉNÉRALES --- */
       *,
       *::before,
       *::after {
@@ -86,21 +30,120 @@ Garnitures, Épices & Herbes Fraîches
         margin: 0;
         padding: 0;
         font-family: "Times New Roman", Times, serif;
-        color: #f5f5f5;
-        background-color: #1a1a1a;
+        background-color: #333333; /* Fond gris hors impression pour contraster le papier */
         -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
 
-      .menu-page {
+      /* BARRE DE CONTRÔLE (Ecran uniquement) */
+      .control-panel {
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.85);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 8px;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+
+      .control-panel select,
+      .control-panel button {
+        padding: 5px 10px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* --- FORMATS DES PAGES (A4 vs A5) --- */
+      body.format-a4 .menu-page {
         width: 210mm;
         height: 297mm;
-        position: relative;
         padding: 18mm 20mm 16mm 20mm;
+        font-size: 10pt;
+      }
+      body.format-a4 .cover h1 {
+        font-size: 28pt;
+      }
+      body.format-a4 .section-title {
+        font-size: 18pt;
+      }
+      body.format-a4 .section-subtitle {
+        font-size: 14pt;
+      }
+      body.format-a4 .cocktail-name {
+        font-size: 12pt;
+      }
+      body.format-a4 .cocktail-recipe {
+        font-size: 10pt;
+      }
+      body.format-a4 .page-number {
+        bottom: 14mm;
+      }
+      body.format-a4 .ingredients {
+        font-size: 10pt;
+        line-height: 1.5;
+        margin-bottom: 12mm;
+      }
+
+      body.format-a5 .menu-page {
+        width: 148mm;
+        height: 210mm;
+        padding: 10mm 12mm 12mm 12mm;
+        font-size: 8.5pt;
+      }
+      body.format-a5 .cover h1 {
+        font-size: 20pt;
+      }
+      body.format-a5 .section-title {
+        font-size: 13pt;
+      }
+      body.format-a5 .section-subtitle {
+        font-size: 9pt;
+        margin-bottom: 6px;
+      }
+      body.format-a5 .cocktail-list {
+        margin-bottom: 0px;
+      }
+      body.format-a5 .cocktail-item {
+        margin-bottom: 4px;
+      }
+      body.format-a5 .separator {
+        margin: 4px 0;
+      }
+      body.format-a5 .cocktail-name {
+        font-size: 10pt;
+      }
+      body.format-a5 .cocktail-recipe {
+        font-size: 8.5pt;
+      }
+      body.format-a5 .ingredients {
+        font-size: 8pt;
+        margin-bottom: 8mm;
+      }
+      body.format-a5 .page-number {
+        bottom: 12mm;
+      }
+
+      /* --- CONTENUS DE PAGE --- */
+      .menu-page {
+        position: relative;
+        margin: 20px auto;
+        background-color: var(--bg-color);
+        color: var(--text-color);
         display: flex;
         flex-direction: column;
+        justify-content: space-evenly;
         page-break-after: always;
+        break-after: page;
         overflow: hidden;
-        background-color: #1a1a1a;
       }
 
       .page-border {
@@ -109,8 +152,8 @@ Garnitures, Épices & Herbes Fraîches
         bottom: 8mm;
         left: 8mm;
         right: 8mm;
-        border: 1.5px solid #d4af37;
-        outline: 1px solid #d4af37;
+        border: 1.5px solid var(--accent-color);
+        outline: 1px solid var(--accent-color);
         outline-offset: -5px;
         pointer-events: none;
         z-index: 10;
@@ -127,29 +170,28 @@ Garnitures, Épices & Herbes Fraîches
       }
 
       .cover h1 {
-        font-size: 28pt;
         letter-spacing: 4px;
-        color: #d4af37;
+        color: var(--accent-color);
         margin: 0 0 15px 0;
         text-transform: uppercase;
         font-weight: bold;
-        border-bottom: 2px double #d4af37;
+        border-bottom: 2px double var(--accent-color);
         padding-bottom: 15px;
         display: inline-block;
       }
 
       .cover .subtitle {
-        font-size: 20pt;
+        font-size: 1.4em;
         font-style: italic;
-        color: #f5f5f5;
+        color: var(--text-color);
         margin-top: 15px;
         letter-spacing: 2px;
       }
 
       .cover .ornament {
-        font-size: 18pt;
-        color: #d4af37;
-        margin: 25px 0;
+        font-size: 1.2em;
+        color: var(--accent-color);
+        margin: 20px 0;
         letter-spacing: 8px;
       }
 
@@ -166,83 +208,127 @@ Garnitures, Épices & Herbes Fraîches
       }
 
       .section-title {
-        font-size: 18pt;
         text-transform: uppercase;
         letter-spacing: 1.5px;
-        color: #d4af37;
+        color: var(--accent-color);
         margin-top: 0;
-        margin-bottom: 3px;
+        margin-bottom: 4mm;
         text-align: center;
-        padding-left: 8px;
         font-weight: bold;
       }
 
       .section-subtitle {
-        font-size: 14pt;
         font-style: italic;
-        color: #f5f5f5;
-        margin-bottom: 14px;
-        padding-left: 11px;
+        color: var(--muted-text);
+        margin-bottom: 12px;
         line-height: 1.2;
         text-align: center;
       }
 
       .ingredients {
-        font-size: 10pt;
         line-height: 1.3;
-        color: #f5f5f5;
-        margin-bottom: 15mm;
+        color: var(--text-color);
+        text-align: center;
       }
 
       .cocktail-list {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
       }
 
       .cocktail-item {
-        margin-bottom: 9px;
+        margin-bottom: 4mm;
         break-inside: avoid;
         text-align: center;
       }
 
       .cocktail-name {
-        font-size: 12pt;
+        margin-bottom: 1.5mm;
         font-weight: bold;
-        color: #d4af37;
+        color: var(--accent-color);
         margin-bottom: 1px;
         text-align: center;
       }
 
       .cocktail-recipe {
-        font-size: 10pt;
-        color: #f5f5f5;
+        color: var(--text-color);
         line-height: 1.2;
-        text-align: left;
-        padding-left: 6px;
         text-align: center;
       }
 
       .page-number {
         position: absolute;
-        bottom: 12mm;
         left: 0;
         right: 0;
         text-align: center;
         font-size: 9pt;
-        color: #d4af37;
+        color: var(--accent-color);
         font-style: italic;
+        z-index: 20;
       }
 
       .separator {
         text-align: center;
-        margin: 10px 0;
-        color: #d4af37;
+        margin: 8px 0;
+        color: var(--accent-color);
         font-size: 10pt;
         break-inside: avoid;
+      }
+
+      /* --- GESTION IMPRESSION (@MEDIA PRINT) --- */
+      @media print {
+        .control-panel {
+          display: none !important;
+        }
+
+        body {
+          background-color: transparent;
+        }
+
+        .menu-page {
+          margin: 0;
+          box-shadow: none;
+        }
+
+        /* Définition dynamique des règles de page selon le format */
+        body.format-a4 {
+          @page {
+            size: A4 portrait;
+            margin: 0;
+          }
+        }
+
+        body.format-a5 {
+          @page {
+            size: A5 portrait;
+            margin: 0;
+          }
+        }
       }
     </style>
   </head>
 
-  <body>
+  <body class="theme-dark format-a4">
+    <!-- PANNEAU DE CONTRÔLE SUR ÉCRAN -->
+    <div class="control-panel">
+      <label
+        >Format :
+        <select id="formatSelect" onchange="updateProfile()">
+          <option value="format-a4">A4 Portrait</option>
+          <option value="format-a5">A5 Portrait</option>
+        </select>
+      </label>
+
+      <label
+        >Style :
+        <select id="themeSelect" onchange="updateProfile()">
+          <option value="theme-dark">Noir & Or (Style)</option>
+          <option value="theme-light">Blanc & Noir (Économique)</option>
+        </select>
+      </label>
+
+      <button onclick="window.print()">🖨️ Imprimer / Imprimer en PDF</button>
+    </div>
+
     <!-- PAGE 1: COUVERTURE & INGRÉDIENTS -->
     <div class="menu-page">
       <div class="page-border"></div>
@@ -286,7 +372,8 @@ Garnitures, Épices & Herbes Fraîches
             <div class="cocktail-item">
               <div class="cocktail-name">Mojito Classique</div>
               <div class="cocktail-recipe">
-                5 cl Rhum Blanc + 6 f. Menthe + 2 cl Citron Vert + 1,5 cl Sirop + Soda.
+                5 cl Rhum Blanc + 6 f. Menthe + 2 cl Citron Vert + 1,5 cl Sirop
+                + Soda.
               </div>
             </div>
             <div class="cocktail-item">
@@ -316,7 +403,8 @@ Garnitures, Épices & Herbes Fraîches
             <div class="cocktail-item">
               <div class="cocktail-name">Rhum Fizz</div>
               <div class="cocktail-recipe">
-                5 cl Rhum Blanc + 3 cl Citron Jaune + 1,5 cl Sirop + Eau Pétillante.
+                5 cl Rhum Blanc + 3 cl Citron Jaune + 1,5 cl Sirop + Eau
+                Pétillante.
               </div>
             </div>
             <div class="cocktail-item">
@@ -339,13 +427,15 @@ Garnitures, Épices & Herbes Fraîches
             <div class="cocktail-item">
               <div class="cocktail-name">Cosmopolitan</div>
               <div class="cocktail-recipe">
-                4 cl Vodka + 2 cl Triple Sec + 1,5 cl Citron Vert + 3 cl Cranberry.
+                4 cl Vodka + 2 cl Triple Sec + 1,5 cl Citron Vert + 3 cl
+                Cranberry.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Sex on the Beach</div>
               <div class="cocktail-recipe">
-                4 cl Vodka + 2 cl Crème Pêche + 4 cl Jus Orange + 4 cl Cranberry.
+                4 cl Vodka + 2 cl Crème Pêche + 4 cl Jus Orange + 4 cl
+                Cranberry.
               </div>
             </div>
             <div class="cocktail-item">
@@ -397,8 +487,10 @@ Garnitures, Épices & Herbes Fraîches
             <div class="cocktail-item">
               <div class="cocktail-name">Margarita</div>
               <div class="cocktail-recipe">
-                Classique: 5 cl Tequila + 3 cl Triple Sec + 2 cl Jus Citron Vert. Shaker.<br />
-                Tommy's Style: 5 cl Tequila + 3 cl Jus Citron Vert + 1,5 cl Sirop Sucre.
+                Classique: 5 cl Tequila + 3 cl Triple Sec + 2 cl Jus Citron
+                Vert.<br />
+                Tommy's Style: 5 cl Tequila + 3 cl Jus Citron Vert + 1,5 cl
+                Sirop Sucre.
               </div>
             </div>
             <div class="cocktail-item">
@@ -422,21 +514,23 @@ Garnitures, Épices & Herbes Fraîches
             <div class="cocktail-item">
               <div class="cocktail-name">Paloma</div>
               <div class="cocktail-recipe">
-                5 cl Tequila + 2 cl Citron Vert + 5 cl Jus Pamplemousse + 5 cl Eau Pétillante + 1,5 cl Sirop Sucre.
+                5 cl Tequila + 2 cl Citron Vert + 5 cl Jus Pamplemousse + 5 cl
+                Eau Pétillante.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Tequila Sun Series</div>
               <div class="cocktail-recipe">
-                Sunrise: 5 cl Tequila + 10 cl Jus Orange + 1.5 cl Sirop Grenadine au fond.<br />
-                Sunset: 5 cl Tequila + 5 cl Jus d'Orange + 5 cl Jus de Cranberry.<br />
-                Sunburn: 5 cl Tequila + 5 cl Jus d'Orange + 1,5 cl Crème de Cassis.
+                Sunrise: 5 cl Tequila + 10 cl Jus Orange + 1.5 cl Grenadine.<br />
+                Sunset: 5 cl Tequila + 5 cl Jus d'Orange + 5 cl Jus de
+                Cranberry.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">El Diablo</div>
               <div class="cocktail-recipe">
-                5 cl Tequila + 1,5 cl Crème Cassis + 2 cl Citron Vert + Ginger Ale.
+                5 cl Tequila + 1,5 cl Crème Cassis + 2 cl Citron Vert + Ginger
+                Ale.
               </div>
             </div>
           </div>
@@ -471,7 +565,8 @@ Garnitures, Épices & Herbes Fraîches
             <div class="cocktail-item">
               <div class="cocktail-name">Gin Daiquiri & Southside</div>
               <div class="cocktail-recipe">
-                5 cl Gin + 2 cl Citron Vert + 1,5 cl Sirop (+ Menthe pour Southside).
+                5 cl Gin + 2 cl Citron Vert + 1,5 cl Sirop (+ Menthe pour
+                Southside).
               </div>
             </div>
             <div class="cocktail-item">
@@ -489,7 +584,8 @@ Garnitures, Épices & Herbes Fraîches
             <div class="cocktail-item">
               <div class="cocktail-name">Gin Highball Classic</div>
               <div class="cocktail-recipe">
-                5 cl Gin + Allonger Eau Pétillante + Zeste Citron Vert / Concombre.
+                5 cl Gin + Allonger Eau Pétillante + Zeste Citron Vert /
+                Concombre.
               </div>
             </div>
           </div>
@@ -517,7 +613,8 @@ Garnitures, Épices & Herbes Fraîches
             <div class="cocktail-item">
               <div class="cocktail-name">Boston Sour</div>
               <div class="cocktail-recipe">
-                5 cl Bourbon + 2 cl Citron Jaune + 1,5 cl Sirop + 1,5 cl Blanc d'œuf.
+                5 cl Bourbon + 2 cl Citron Jaune + 1,5 cl Sirop + 1,5 cl Blanc
+                d'œuf.
               </div>
             </div>
             <div class="cocktail-item">
@@ -594,13 +691,15 @@ Garnitures, Épices & Herbes Fraîches
             <div class="cocktail-item">
               <div class="cocktail-name">Caribbean Mule</div>
               <div class="cocktail-recipe">
-                5 cl Rhum Blanc ou Épicé + 2 cl Citron Vert + Allonger Ginger Beer.
+                5 cl Rhum Blanc ou Épicé + 2 cl Citron Vert + Allonger Ginger
+                Beer.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">French Mule</div>
               <div class="cocktail-recipe">
-                5 cl Cognac ou Calvados + 2 cl Citron Vert + Allonger Ginger Beer.
+                5 cl Cognac ou Calvados + 2 cl Citron Vert + Allonger Ginger
+                Beer.
               </div>
             </div>
           </div>
@@ -700,13 +799,14 @@ Garnitures, Épices & Herbes Fraîches
             <div class="cocktail-item">
               <div class="cocktail-name">Tennessee Iced Tea</div>
               <div class="cocktail-recipe">
-                Base + 1,5 cl Jack Daniel's + 1,5 cl Triple Sec + Citron + Sprite.
+                Base + 1,5 cl Jack Daniel's + 1,5 cl Triple Sec + Citron +
+                Sprite.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Beverly Hills Iced Tea</div>
               <div class="cocktail-recipe">
-                Base + 1,5 cl Triple Sec + 3 cl Citron + Champagne / Effervescent.
+                Base + 1,5 cl Triple Sec + 3 cl Citron + Champagne.
               </div>
             </div>
             <div class="cocktail-item">
@@ -770,7 +870,8 @@ Garnitures, Épices & Herbes Fraîches
             <div class="cocktail-item">
               <div class="cocktail-name">Malibu Highball</div>
               <div class="cocktail-recipe">
-                5 cl Malibu + Allonger au Tonic ou Ginger Ale + Zeste Citron Vert.
+                5 cl Malibu + Allonger au Tonic ou Ginger Ale + Zeste Citron
+                Vert.
               </div>
             </div>
           </div>
@@ -831,5 +932,14 @@ Garnitures, Épices & Herbes Fraîches
       </div>
       <div class="page-number">- 6 -</div>
     </div>
+
+    <!-- SCRIPT DE BASCULEMENT DE PROFILE -->
+    <script>
+      function updateProfile() {
+        const format = document.getElementById("formatSelect").value;
+        const theme = document.getElementById("themeSelect").value;
+        document.body.className = `${format} ${theme}`;
+      }
+    </script>
   </body>
 </html>
