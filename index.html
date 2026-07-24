@@ -250,6 +250,20 @@
         text-align: center;
       }
 
+      .instructions {
+        display: inline-block;
+        font-size: 0.7em;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        padding: 1px 6px;
+        margin-top: 1.5mm;
+        border: 1px solid var(--accent-color);
+        border-radius: 3px;
+        color: var(--text-color);
+        opacity: 0.9;
+      }
+
       .page-number {
         position: absolute;
         left: 0;
@@ -309,7 +323,7 @@
         >Format :
         <select id="formatSelect" onchange="updateProfile()">
           <option value="format-a4">A4 Portrait</option>
-          <option value="format-a5">A5 Portrait</option>
+          <!-- <option value="format-a5">A5 Portrait</option> -->
         </select>
       </label>
 
@@ -324,18 +338,20 @@
       <button onclick="window.print()">🖨️ Imprimer / Imprimer en PDF</button>
     </div>
 
-    <!-- PAGE 1: COUVERTURE & INGRÉDIENTS -->
+    <!-- PAGE 0: COUVERTURE & INGRÉDIENTS -->
     <div class="menu-page">
       <div class="page-border"></div>
       <div class="cover">
         <h1>Le Carnet du Comptoir</h1>
-        <div class="subtitle">Recettes des Cocktails (104 + 10!)</div>
+        <div class="subtitle">
+          Recettes des 1... 2... 3... 123 Cocktails !<br />
+          (& 10 mocktails)
+        </div>
         <div class="ornament">❖&nbsp;❖&nbsp;❖</div>
       </div>
-      <div class="page-number">- 1 -</div>
     </div>
 
-    <!-- PAGE 2: LES GRANDS VOYAGES & L'ÉVASION -->
+    <!-- PAGE 1: LES GRANDS VOYAGES & L'ÉVASION -->
     <div class="menu-page">
       <div class="page-border"></div>
       <div class="page-content">
@@ -347,9 +363,10 @@
           <div class="cocktail-list">
             <div class="cocktail-item">
               <div class="cocktail-name">Mojito</div>
+              <div class="instructions">Crushed - Verre</div>
               <div class="cocktail-recipe">
                 Classique : 5 cl Rhum Blanc + 6 f. Menthe + 2 cl Citron Vert +
-                1,5 cl Sirop + Eau Pétillante<br />
+                1,5 cl Sirop + Eau Pétillante.<br />
                 Fraise : 5 cl Rhum Blanc + 6 f. Menthe + 2 cl Citron Vert + 1,5
                 cl Sirop (ou Purée) Fraise + Eau Pétillante.<br />
                 Royal : 5 cl Rhum Blanc + 6 f. Menthe + 2 cl Citron Vert + 1,5
@@ -358,31 +375,44 @@
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Cuba Libre</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 5 cl Rhum Blanc + 1 cl Citron Vert + Allonger Cola.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Daiquiri</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 5 cl Rhum Blanc + 2 cl Citron Vert + 1,5 cl Sirop Sucre. Shaker.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Piña Colada</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                5 cl Rhum Blanc + 3 cl Crème de Coco + 8-10 cl Jus Ananas + 1 cl
+                5 cl Rhum Blanc + 3 cl Crème Coco + 8-10 cl Jus Ananas + 1 cl
                 Citron Vert.<br />
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Dark & Stormy</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 5 cl Rhum Noir + 2 cl Citron Vert + Allonger Ginger Beer.
               </div>
             </div>
             <div class="cocktail-item">
+              <div class="cocktail-name">El Presidente</div>
+              <div class="instructions">Ice Cubes • Remué</div>
+              <div class="cocktail-recipe">
+                4 cl Rhum Blanc + 2 cl Vermouth Rouge + 1 cl Triple Sec + 0,5 cl
+                Grenadine.
+              </div>
+            </div>
+            <div class="cocktail-item">
               <div class="cocktail-name">Rhum Fizz</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 5 cl Rhum Blanc + 3 cl Citron Jaune + 1,5 cl Sirop + Eau
                 Pétillante.
@@ -390,12 +420,14 @@
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Planter's Punch</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 5 cl Rhum + 4 cl Jus Orange + 4 cl Jus Ananas + 1 cl Grenadine.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Old Cuban</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 4 cl Rhum Noir + 6 f. Menthe + 2 cl Jus Citron Vert + 1,5 cl
                 Sirop + 3 traits d'Angostura Bitters + Allonger Champagne.
@@ -404,10 +436,10 @@
           </div>
         </div>
       </div>
-      <div class="page-number">- 2 -</div>
+      <div class="page-number">- 1 -</div>
     </div>
 
-    <!-- PAGE 3: LES GRANDS VOYAGES & L'ÉVASION -->
+    <!-- PAGE 2: LES GRANDS VOYAGES & L'ÉVASION -->
     <div class="menu-page">
       <div class="page-border"></div>
       <div class="page-content">
@@ -419,12 +451,14 @@
           <div class="cocktail-list">
             <div class="cocktail-item">
               <div class="cocktail-name">Vodka Cola</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 5 cl Vodka + 12 cl Cola + 1 Quartier Citron Vert.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Cosmopolitan</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 4 cl Vodka + 2 cl Triple Sec + 1,5 cl Citron Vert + 3 cl
                 Cranberry.
@@ -432,6 +466,7 @@
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Sex on the Beach</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 4 cl Vodka + 2 cl Crème Pêche + 4 cl Jus Orange + 4 cl
                 Cranberry.
@@ -439,30 +474,35 @@
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Black / White Russian</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 5 cl Vodka + 2,5 cl Liqueur Café (+ 2 cl Crème pour le White).
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Espresso Martini</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 5 cl Vodka + 2 cl Liqueur Café + 1 Espresso + 1 cl Sirop Sucre.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Blue Lagoon</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 4 cl Vodka + 2 cl Curaçao Bleu + 2 cl Jus Citron Jaune.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Kamikaze</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 4 cl Vodka + 2 cl Triple Sec + 2 cl Jus Citron Vert. Shaker.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Breeze Series</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 Sea Breeze : 5 cl Vodka + 6 cl Cranberry + 5 cl Jus
                 Pamplemousse.<br />
@@ -472,10 +512,10 @@
           </div>
         </div>
       </div>
-      <div class="page-number">- 3 -</div>
+      <div class="page-number">- 2 -</div>
     </div>
 
-    <!-- PAGE 4: LES SPIRITUEUX BOTANIQUES -->
+    <!-- PAGE 3: LES SPIRITUEUX BOTANIQUES -->
     <div class="menu-page">
       <div class="page-border"></div>
       <div class="page-content">
@@ -487,6 +527,7 @@
           <div class="cocktail-list">
             <div class="cocktail-item">
               <div class="cocktail-name">Margarita</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 Classique : 5 cl Tequila + 3 cl Triple Sec + 2 cl Jus Citron
                 Vert.<br />
@@ -496,30 +537,35 @@
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Mexicola</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 5 cl Tequila + 1 cl Citron Vert + Allonger Cola.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Matador</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 5 cl Tequila + 2 cl Citron Vert + 8 cl Jus Ananas.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Brave Bull</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 5 cl Tequila + 2,5 cl Liqueur Café sur glaçons.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Tequila Collins</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 5 cl Tequila + 3 cl Citron Jaune + 2 cl Sirop + Eau Pétillante.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Paloma</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 5 cl Tequila + 2 cl Citron Vert + 5 cl Jus Pamplemousse + 5 cl
                 Eau Pétillante.
@@ -527,28 +573,30 @@
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Tequila Sun Series</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                Sunrise : 5 cl Tequila + 10 cl Jus Orange + 1.5 cl Grenadine.<br />
+                Sunrise : 5 cl Tequila + 10 cl Jus Orange + 1,5 cl Grenadine.<br />
                 Sunset : 5 cl Tequila + 5 cl Jus d'Orange + 5 cl Jus de
                 Cranberry.<br />
-                Sunburn : 5 cl Tequila + 10 cl Jus Cranberry + 1.5 Triple Sec +
-                1 cl Jus Citron Vert.
+                Sunburn : 5 cl Tequila + 10 cl Jus Cranberry + 1,5 cl Triple Sec
+                + 1 cl Jus Citron Vert.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">El Diablo</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Tequila + 1,5 cl Crème Cassis + 2 cl Citron Vert + Ginger
-                Ale.
+                5 cl Tequila + 1,5 cl Crème Cassis + 2 cl Citron Vert + Allonger
+                Ginger Ale.
               </div>
             </div>
           </div>
         </div>
-        <div class="page-number">- 4 -</div>
+        <div class="page-number">- 3 -</div>
       </div>
     </div>
 
-    <!-- PAGE 5: LES SPIRITUEUX BOTANIQUES -->
+    <!-- PAGE 4: LES SPIRITUEUX BOTANIQUES -->
     <div class="menu-page">
       <div class="page-border"></div>
       <div class="page-content">
@@ -560,45 +608,59 @@
           <div class="cocktail-list">
             <div class="cocktail-item">
               <div class="cocktail-name">Gin & Tonic</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                Classique : 5 cl Gin + Allonger au Tonic. Garniture : zeste de
-                citron.<br />
-                Pink : 5 cl Pink Gin (ou 5 cl Gin classique + 1.5 cl sirop de
+                Classique : 5 cl Gin + Allonger au Tonic. Garniture : Zeste
+                Citron.<br />
+                Pink : 5 cl Pink Gin (ou 5 cl Gin classique + 1,5 cl sirop de
                 fraise/framboise) + Allonger au Tonic. Garniture : 2-3 fruits
                 rouges.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Gin Fizz</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 5 cl Gin + 3 cl Citron Jaune + 1,5 cl Sirop + Eau Pétillante.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">The Ladies</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 White Lady : 5 cl Gin + 2 cl Triple Sec + 1,5 cl Jus Citron
-                Jaune. Shaker.<br />
-                Red Lady : 5 cl Gin, 2.5 cl Jus de citron jaune, 2 cl Sirop de
-                framboise, 1.5 cl Blanc d'œuf. Shaker à sec (sans glace) puis
-                avec glace pour créer une mousse rose parfaite.
+                Jaune.<br />
+                Red Lady : 5 cl Gin + 2,5 cl Jus Citron Jaune + 2 cl Sirop
+                fraise/framboise + 1,5 cl Blanc d'œuf. Shaker à sec (sans glace)
+                puis avec glace pour créer une mousse rose parfaite.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Gin Daiquiri & Southside</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 5 cl Gin + 2 cl Citron Vert + 1,5 cl Sirop (+ Menthe pour
                 Southside).
               </div>
             </div>
             <div class="cocktail-item">
+              <div class="cocktail-name">Bramble</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
+              <div class="cocktail-recipe">
+                5 cl Gin + 2,5 cl Citron Jaune + 1,5 cl Sirop + 1,5 cl Crème de
+                Cassis (ou sirop fruits rouges) au-dessus.
+              </div>
+            </div>
+            <div class="cocktail-item">
               <div class="cocktail-name">Gin Basil Smash</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 5 cl Gin + 3 cl Citron Jaune + 2 cl Sirop + 5 f. Basilic pilées.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Gin & Apple Fizz</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 5 cl Gin + 3 cl Jus Pomme + 2 cl Citron Jaune + Allonger Eau
                 Pétillante.
@@ -606,9 +668,93 @@
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Gin Highball Classic</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 5 cl Gin + Allonger Eau Pétillante + Zeste Citron Vert /
                 Concombre.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">- 4 -</div>
+    </div>
+
+    <!-- PAGE 5: L'ART DES ÉQUILIBRES -->
+    <div class="menu-page">
+      <div class="page-border"></div>
+      <div class="page-content">
+        <div class="section-block">
+          <div class="section-title">Sour Power</div>
+          <div class="section-subtitle">
+            L'équilibre parfait entre l'acide, le doux et la force
+          </div>
+          <div class="cocktail-list">
+            <div class="cocktail-item">
+              <div class="cocktail-name">Whisky Sour</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
+              <div class="cocktail-recipe">
+                5 cl Bourbon + 2 cl Citron Jaune + 1,5 cl Sirop.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Boston Sour</div>
+              <div class="instructions">Ice Cubes • Dry Shake & Ice</div>
+              <div class="cocktail-recipe">
+                5 cl Bourbon + 2 cl Citron Jaune + 1,5 cl Sirop + 1,5 cl Blanc
+                d'œuf.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Amaretto Sour</div>
+              <div class="instructions">Ice Cubes • Dry Shake & Ice</div>
+              <div class="cocktail-recipe">
+                5 cl Amaretto + 2 cl Citron Jaune + 1,5 cl Blanc d'œuf.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Vodka Sour</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
+              <div class="cocktail-recipe">
+                5 cl Vodka + 2 cl Citron Jaune + 1,5 cl Sirop Sucre.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Gin Sour</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
+              <div class="cocktail-recipe">
+                5 cl Gin + 2 cl Citron Jaune + 1,5 cl Sirop Sucre.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Rum Sour</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
+              <div class="cocktail-recipe">
+                5 cl Rhum Blanc + 2 cl Citron Jaune + 1,5 cl Sirop Sucre.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Tequila Sour</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
+              <div class="cocktail-recipe">
+                5 cl Tequila + 2 cl Citron Jaune + 1,5 cl Sirop Sucre.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Trinidad Sour</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
+              <div class="cocktail-recipe">
+                5 cl Gin + 2 cl Citron Jaune + 1,5 cl Sirop Sucre + 3 traits
+                Angostura Bitters.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Cranberry Sour</div>
+              <div class="instructions">Ice Cubes • Dry Shake & Ice</div>
+              <div class="cocktail-recipe">
+                5 cl Vodka, Gin, Rhum blanc, Bourbon ou Whisky + 4 cl Jus
+                Cranberry + 2 cl Citron Jaune + 1,5 cl Sirop Sucre + 1,5 cl
+                Blanc d'œuf.
               </div>
             </div>
           </div>
@@ -622,68 +768,88 @@
       <div class="page-border"></div>
       <div class="page-content">
         <div class="section-block">
-          <div class="section-title">Sour Power</div>
+          <div class="section-title">La Tête de Mule</div>
           <div class="section-subtitle">
-            L'équilibre parfait entre l'acide, le doux et la force
+            L'alliance pétillante du gingembre et du caractère
           </div>
           <div class="cocktail-list">
             <div class="cocktail-item">
-              <div class="cocktail-name">Whisky Sour</div>
+              <div class="cocktail-name">Moscow Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Bourbon + 2 cl Citron Jaune + 1,5 cl Sirop.
+                5 cl Vodka + 2 cl Citron Vert + Allonger Ginger Beer.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Boston Sour</div>
+              <div class="cocktail-name">London Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Bourbon + 2 cl Citron Jaune + 1,5 cl Sirop + 1,5 cl Blanc
-                d'œuf.
+                5 cl Gin + 2 cl Citron Vert + Allonger Ginger Beer.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Amaretto Sour</div>
+              <div class="cocktail-name">Mexican Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Amaretto + 2 cl Citron Jaune + 1,5 cl Blanc d'œuf.
+                5 cl Tequila + 2 cl Citron Vert + Allonger Ginger Beer.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Vodka Sour</div>
+              <div class="cocktail-name">Kentucky Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Vodka + 2 cl Citron Jaune + 1,5 cl Sirop Sucre.
+                5 cl Bourbon + 2 cl Citron Vert + Allonger Ginger Beer.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Gin Sour</div>
+              <div class="cocktail-name">Irish Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Gin + 2 cl Citron Jaune + 1,5 cl Sirop Sucre.
+                5 cl Whisky + 2 cl Citron Vert + Allonger Ginger Beer.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Rum Sour</div>
+              <div class="cocktail-name">Caribbean Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Rhum Blanc + 2 cl Citron Jaune + 1,5 cl Sirop Sucre.
+                5 cl Rhum Blanc + 2 cl Citron Vert + Allonger Ginger Beer.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Tequila Sour</div>
+              <div class="cocktail-name">Jamaican Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Tequila + 2 cl Citron Jaune + 1,5 cl Sirop Sucre.
+                5 cl Rhum Épicé + 2 cl Citron Vert + Allonger Ginger Beer.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Trinidad Sour</div>
+              <div class="cocktail-name">French Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Gin + 2 cl Citron Jaune + 1,5 cl Sirop Sucre + 3 traits
-                Angostura Bitters.
+                5 cl Cognac ou Calvados + 2 cl Citron Vert + Allonger Ginger
+                Beer.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Cranberry Sour</div>
+              <div class="cocktail-name">Milanese Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Vodka, Gin, Rhum blanc, Bourbon ou Whisky + 4 cl Jus
-                Cranberry + 2 cl Citron Jaune + 1,5 cl Sirop Sucre + 1,5 cl
-                Blanc d'œuf. Shaker à sec (sans glace) puis avec glace pour
-                créer une mousse parfaite. Filtrer sur glaçons.
+                5 cl Campari/Aperol + 2 cl Citron Vert + Allonger Ginger Beer.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Espresso Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
+              <div class="cocktail-recipe">
+                4 cl Vodka + 2 cl Liqueur Café + Allonger Ginger Beer.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Dark & Stormy Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
+              <div class="cocktail-recipe">
+                5 cl Rhum Noir + 2 cl Citron Vert + Allonger Ginger Beer + 2
+                traits Angostura Bitters.
               </div>
             </div>
           </div>
@@ -692,69 +858,102 @@
       <div class="page-number">- 6 -</div>
     </div>
 
-    <!-- PAGE 7: L'ART DES ÉQUILIBRES -->
+    <!-- PAGE 7: LE CARACTÈRE & LA PUISSANCE -->
     <div class="menu-page">
       <div class="page-border"></div>
       <div class="page-content">
         <div class="section-block">
-          <div class="section-title">La Tête de Mule</div>
+          <div class="section-title">L'Alambic Club</div>
           <div class="section-subtitle">
-            L'alliance pétillante du gingembre et du caractère
+            Classiques rétro portés par le whisky et l'amertume
           </div>
           <div class="cocktail-list">
             <div class="cocktail-item">
-              <div class="cocktail-name">Moscow Mule</div>
+              <div class="cocktail-name">Whisky Cola</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Vodka + 2 cl Citron Vert + Allonger Ginger Beer.
+                5 cl Whisky + 12 cl Cola + 1 Quartier Citron.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">London Mule</div>
+              <div class="cocktail-name">Old Fashioned</div>
+              <div class="instructions">Ice Cubes • Remué</div>
               <div class="cocktail-recipe">
-                5 cl Gin + 2 cl Citron Vert + Allonger Ginger Beer.
+                5 cl Bourbon + 1 morceau Sucre + 3 traits Angostura Bitters + 1
+                Zeste Orange.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Mexican Mule</div>
+              <div class="cocktail-name">Manhattan</div>
+              <div class="instructions">Ice Cubes • Remué</div>
               <div class="cocktail-recipe">
-                5 cl Tequila + 2 cl Citron Vert + Allonger Ginger Beer.
+                5 cl Bourbon + 2 cl Vermouth Rouge + 2 traits Angostura Bitters.
+                Garniture : Cerises Marasquin.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Kentucky Mule</div>
+              <div class="cocktail-name">Black Manhattan</div>
+              <div class="instructions">Ice Cubes • Remué</div>
               <div class="cocktail-recipe">
-                5 cl Bourbon + 2 cl Citron Vert + Allonger Ginger Beer.
+                5 cl Bourbon + 2,5 cl Liqueur Café + 2 traits Angostura Bitters.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Irish Mule</div>
+              <div class="cocktail-name">Le Boulevardier</div>
+              <div class="instructions">Ice Cubes • Remué</div>
               <div class="cocktail-recipe">
-                5 cl Whisky + 2 cl Citron Vert + Allonger Ginger Beer.
+                3 cl Bourbon + 3 cl Vermouth Rouge + 3 cl Campari. Remué.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Caribbean Mule</div>
+              <div class="cocktail-name">Americano</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Rhum Blanc + 2 cl Citron Vert + Allonger Ginger Beer.
+                3 cl Campari + 3 cl Vermouth Rouge + Allonger Eau Pétillante.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Jamaican Mule</div>
+              <div class="cocktail-name">Godfather</div>
+              <div class="instructions">Ice Cubes • Remué</div>
               <div class="cocktail-recipe">
-                5 cl Rhum Épicé + 2 cl Citron Vert + Allonger Ginger Beer.
+                5 cl Whisky + 2,5 cl Amaretto. Sur gros glaçon.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">French Mule</div>
+              <div class="cocktail-name">Lynchburg Lemonade</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Cognac ou Calvados + 2 cl Citron Vert + Allonger Ginger
-                Beer.
+                5 cl Jack Daniel's + 2 cl Triple Sec + 2 cl Citron + Limonade.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Milanese Mule</div>
+              <div class="cocktail-name">Mint Julep</div>
+              <div class="instructions">Crushed Ice • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Campari/Aperol + 2 cl Citron Vert + Allonger Ginger Beer.
+                5 cl Bourbon + 1 cl Sirop + 8 f. menthe. Glace pilée.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Whisky & Apple Fizz</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
+              <div class="cocktail-recipe">
+                5 cl Whisky + 3 cl Jus Pomme + 2 cl Citron Jaune + Allonger Eau
+                Pétillante.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Angostura Fizz</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
+              <div class="cocktail-recipe">
+                5 cl Bourbon + 3 cl Citron Jaune + 1,5 cl Sirop Sucre + 3 traits
+                Angostura Bitters + Allonger Eau Pétillante.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Whisky Highball Classic</div>
+              <div class="instructions">Ice Cubes • Verre</div>
+              <div class="cocktail-recipe">
+                5 cl Whisky + Allonger Eau Pétillante sur glace abondante.
               </div>
             </div>
           </div>
@@ -768,79 +967,76 @@
       <div class="page-border"></div>
       <div class="page-content">
         <div class="section-block">
-          <div class="section-title">L'Alambic Club</div>
+          <div class="section-title">Balade à Long Island</div>
           <div class="section-subtitle">
-            Classiques rétro portés par le whisky et l'amertume
+            Pour ceux qui rentrent à pied !<br />
+            Base: 1,5cl Vodka • Gin • Rhum • Tequila
           </div>
           <div class="cocktail-list">
             <div class="cocktail-item">
-              <div class="cocktail-name">Whisky Cola</div>
+              <div class="cocktail-name">Long Island Iced Tea</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                5 cl Whisky + 12 cl Cola + 1 Quartier Citron.
+                Base + 1,5 cl Triple Sec + 2 cl Citron + Allonger Cola.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Old Fashioned</div>
+              <div class="cocktail-name">Hawaiian Iced Tea</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                5 cl Bourbon + 1 morceau de Sucre + 3 traits Angostura Bitters +
-                1 Zeste d'Orange.
+                Base + 1,5 cl Triple Sec + 2 cl Citron + Allonger Jus Ananas.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Manhattan</div>
+              <div class="cocktail-name">AMF (Adios Mother F*er)</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                5 cl Bourbon + 2 cl Vermouth Rouge + 2 traits Angostura Bitters.
-                Garniture : Cerises Marasquin.
+                Base + 1,5 cl Curaçao Bleu + 3 cl Citron Jaune + Allonger
+                Limonade.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Le Boulevardier</div>
+              <div class="cocktail-name">Green Island Iced Tea</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                3 cl Bourbon + 3 cl Vermouth Rouge + 3 cl Campari. Remué.
+                Base + 1,5 cl Liqueur Banane + 3 cl Citron + 3 cl Lait Coco.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Americano</div>
+              <div class="cocktail-name">Texas Iced Tea</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                3 cl Campari + 3 cl Vermouth Rouge + Allonger Eau Pétillante.
+                Base + 1,5 cl Bourbon + 1,5 cl Triple Sec + 3 cl Citron +
+                Allonger Cola.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Godfather</div>
+              <div class="cocktail-name">Beverly Hills Iced Tea</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                5 cl Whisky + 2,5 cl Amaretto. Sur gros glaçon.
+                Base + 1,5 cl Triple Sec + 3 cl Citron + Allonger Champagne.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Lynchburg Lemonade</div>
+              <div class="cocktail-name">Miami Iced Tea</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                5 cl Jack Daniel's + 2 cl Triple Sec + 2 cl Citron + Limonade.
+                Base + 1,5 cl Triple Sec + 1,5 cl Peach Schnapps + Allonger
+                Cranberry.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Mint Julep</div>
+              <div class="cocktail-name">Georgia Iced Tea</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                5 cl Bourbon + 1 cl Sirop + 8 f. menthe. Glace pilée.
+                Base + 1,5 cl Crème Pêche + 2,5 cl Citron + Allonger Cola.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Whisky & Apple Fizz</div>
+              <div class="cocktail-name">Long Beach Iced Tea</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                5 cl Whisky + 3 cl Jus Pomme + 2 cl Citron Jaune + Allonger Eau
-                Pétillante.
-              </div>
-            </div>
-            <div class="cocktail-item">
-              <div class="cocktail-name">Angostura Fizz</div>
-              <div class="cocktail-recipe">
-                5 cl Bourbon + 3 cl Citron Jaune + 1,5 cl Sirop Sucre + 3 traits
-                d'Angostura Bitters + Allonger Eau Pétillante.
-              </div>
-            </div>
-            <div class="cocktail-item">
-              <div class="cocktail-name">Whisky Highball Classic</div>
-              <div class="cocktail-recipe">
-                5 cl Whisky + Allonger Eau Pétillante sur glace abondante.
+                Base + 1,5 cl Triple Sec + 2,5 cl Citron + Allonger Cranberry.
               </div>
             </div>
           </div>
@@ -849,72 +1045,94 @@
       <div class="page-number">- 8 -</div>
     </div>
 
-    <!-- PAGE 9: LE CARACTÈRE & LA PUISSANCE -->
+    <!-- PAGE 9: DOUCEUR & SOBRIÉTÉ -->
     <div class="menu-page">
       <div class="page-border"></div>
       <div class="page-content">
         <div class="section-block">
-          <div class="section-title">Ballade à Long Island</div>
+          <div class="section-title">Coco Bongo Loco Club</div>
           <div class="section-subtitle">
-            Pour ceux qui rentrent à pied !<br />
-            Base: 1,5cl Vodka • Gin • Rhum • Tequila
+            L'onctuosité, la douceur et l'exotisme revisités.
           </div>
           <div class="cocktail-list">
             <div class="cocktail-item">
-              <div class="cocktail-name">Long Island Iced Tea</div>
+              <div class="cocktail-name">Malibu Colada</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                Base + 1,5 cl Triple Sec + 2 cl Citron + Allonger Cola.
+                4 cl Malibu + 2 cl Crème Coco + 8 cl Jus Ananas. Shaker.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Hawaiian Iced Tea</div>
+              <div class="cocktail-name">Lagon Turquoise</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                Base + 1,5 cl Triple Sec + 2 cl Citron + Allonger Jus Ananas.
+                3 cl Vodka + 3 cl Malibu + 1 cl Curaçao + 8 cl Jus Ananas.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">AMF (Adios Mother F*er)</div>
+              <div class="cocktail-name">Malibu Sunset</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                Base + 1,5 cl Curaçao Bleu + 3 cl Citron Jaune + Allonger
-                Limonade.
+                5 cl Malibu + 8 cl Jus Ananas + 1 cl Sirop Grenadine.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Green Island Iced Tea</div>
+              <div class="cocktail-name">Malibu Fizz</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                Base + 1,5 cl Liqueur Banane + 3 cl Citron + 3 cl Lait Coco.
+                4 cl Malibu + 2 cl Jus Citron Vert + Allonger Eau Pétillante.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Texas Iced Tea</div>
+              <div class="cocktail-name">Malibu Punchy</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                Base + 1,5 cl Bourbon + 1,5 cl Triple Sec + 3 cl Citron +
-                Allonger Cola.
+                3 cl Malibu + 2 cl Rhum Blanc + 2 cl Citron Vert + 6 cl Ananas.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Beverly Hills Iced Tea</div>
+              <div class="cocktail-name">Coco Loco</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                Base + 1,5 cl Triple Sec + 3 cl Citron + Allonger Champagne.
+                2 cl Malibu + 4 cl Rhum Épicé + 4 cl Lait Coco + 6 cl Ananas + 1
+                cl Sirop.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Miami Iced Tea</div>
+              <div class="cocktail-name">Malibu Bay Breeze</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                Base + 1,5 cl Triple Sec + 1,5 cl Peach Schnapps + Allonger
-                Cranberry.
+                4 cl Malibu + 5 cl Jus Ananas + 5 cl Jus Cranberry.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Georgia Iced Tea</div>
+              <div class="cocktail-name">Malibu Sunrise Bay</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                Base + 1,5 cl Crème Pêche + 2,5 cl Citron + Allonger Cola.
+                4 cl Malibu + 4 cl Jus d'Orange + 4 cl Jus Cranberry + 1 cl
+                Grenadine.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Long Beach Iced Tea</div>
+              <div class="cocktail-name">Malibu Pink</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                Base + 1,5 cl Triple Sec + 2,5 cl Citron + Allonger Cranberry.
+                4 cl Malibu + 10 cl Jus Cranberry + 2 cl Jus Pamplemousse ou
+                trait Citron vert.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Malibu Pineapple Splash</div>
+              <div class="instructions">Ice Cubes • Verre</div>
+              <div class="cocktail-recipe">
+                5 cl Malibu + 8 cl Ananas + Allonger Limonade ou Eau gazeuse.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Malibu Highball</div>
+              <div class="instructions">Ice Cubes • Verre</div>
+              <div class="cocktail-recipe">
+                5 cl Malibu + Allonger Tonic ou Ginger Ale + Zeste Citron Vert.
               </div>
             </div>
           </div>
@@ -928,71 +1146,96 @@
       <div class="page-border"></div>
       <div class="page-content">
         <div class="section-block">
-          <div class="section-title">Coco Bongo Loco Club</div>
+          <div class="section-title">Les Sunlights des Tropiques</div>
           <div class="section-subtitle">
-            L'onctuosité, la douceur et l'exotisme revisités.
+            Une vague d'exotisme où le fruit de la passion croise la banane.
           </div>
           <div class="cocktail-list">
             <div class="cocktail-item">
-              <div class="cocktail-name">Malibu Colada</div>
+              <div class="cocktail-name">Pornstar Martini</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                4 cl Malibu + 2 cl Crème Coco + 8 cl Jus Ananas. Shaker.
+                4 cl Vodka + 2 cl Liqueur Fruits Passion + 1,5 cl Sirop Vanille
+                + 1,5 cl Jus Citron Vert.<br />
+                Accompagnement : 3 cl Champagne.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Lagon Turquoise</div>
+              <div class="cocktail-name">Passoã Loco</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                3 cl Vodka + 3 cl Malibu + 1 cl Curaçao + 8 cl Jus Ananas.
+                4 cl Liqueur Fruits Passion + 2 cl Vodka + 2 cl Jus Citron Vert
+                + Allonger Limonade.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Malibu Sunset</div>
+              <div class="cocktail-name">Passion Fizz</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                5 cl Malibu + 8 cl Jus Ananas + 1 cl Sirop de Grenadine.
+                3 cl Liqueur Fruits Passion + 3 cl Gin + 2 cl Jus Citron Vert +
+                Allonger Eau Pétillante.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Malibu Fizz</div>
+              <div class="cocktail-name">Passoã Sunrise</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                4 cl Malibu + 2 cl Jus Citron Vert + Allonger Eau Pétillante.
+                5 cl Liqueur Fruits Passion + 10 cl Jus d'Orange + 1 cl Sirop
+                Grenadine.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Malibu Punchy</div>
+              <div class="cocktail-name">Tropical Passion Punch</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                3 cl Malibu + 2 cl Rhum Blanc + 2 cl Citron Vert + 6 cl Ananas.
+                3 cl Rhum Blanc + 3 cl Liqueur Fruits Passion + 8 cl Jus
+                d'Ananas + 1,5 cl Jus Citron Vert.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Coco Loco</div>
+              <div class="cocktail-name">Dirty Banana</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                2 cl Malibu + 4 cl Rhum Épicé + 4 cl Lait Coco + 6 cl Ananas + 1
-                cl Sirop.
+                4 cl Rhum Noir + 3 cl Liqueur Banane + 2 cl Liqueur Café + 4 cl
+                Lait/Crème Coco.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Malibu Bay Breeze</div>
+              <div class="cocktail-name">Green Punch</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                4 cl Malibu + 5 cl Jus Ananas + 5 cl Jus Cranberry.
+                4 cl Rhum Blanc + 3 cl Liqueur Banane + 8 cl Jus d'Ananas + 2 cl
+                Jus Citron Vert + 1 cl Grenadine (au fond).
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Malibu Pink</div>
+              <div class="cocktail-name">Green Sun</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                4 cl Malibu + 10 cl Jus Cranberry + 2 cl Jus Pamplemousse ou
-                trait de citron vert.
+                4 cl Liqueur Banane + 10 cl Jus d'Orange + 1 cl Jus Citron Vert.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Malibu Pineapple Splash</div>
+              <div class="cocktail-name">Green Island</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                5 cl Malibu + 8 cl Ananas + Allonger Limonade ou Eau gazeuse.
+                3 cl Liqueur Banane + 3 cl Gin + 2 cl Jus Citron Jaune +
+                Allonger Eau Pétillante.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Malibu Highball</div>
+              <div class="cocktail-name">Green Lantern</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Malibu + Allonger Tonic ou Ginger Ale + Zeste Citron Vert.
+                4 cl Vodka + 3 cl Liqueur Banane + 10 cl Jus Orange.
+              </div>
+            </div>
+            <div class="cocktail-item">
+              <div class="cocktail-name">Green Colada</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
+              <div class="cocktail-recipe">
+                5 cl Rhum Blanc + 3 cl Liqueur Banane + 6 cl Jus Ananas + 3 cl
+                Lait Coco.
               </div>
             </div>
           </div>
@@ -1001,90 +1244,76 @@
       <div class="page-number">- 10 -</div>
     </div>
 
-    <!-- PAGE 11: DOUCEUR & SOBRIÉTÉ -->
+    <!-- PAGE 11: CIDRES ET POIRÉS -->
     <div class="menu-page">
       <div class="page-border"></div>
       <div class="page-content">
         <div class="section-block">
-          <div class="section-title">Les Sunlights des Tropiques</div>
+          <div class="section-title">Breizh & Fest-Noz</div>
           <div class="section-subtitle">
-            Une vague d'exotisme où le fruit de la passion croise la banane.
+            L'effervescence des vergers bretons.
           </div>
           <div class="cocktail-list">
             <div class="cocktail-item">
-              <div class="cocktail-name">Pornstar Martini</div>
+              <div class="cocktail-name">Pink Velvet</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                4 cl Vodka + 2 cl Liqueur Fruits de la Passion + 1,5 cl Sirop
-                Vanille + 1,5 cl Jus Citron Vert.<br />
-                Side : 3 cl Champagne.
+                3 cl Crème Cassis + 1,5 cl Jus Citron Jaune + Allonger Cidre
+                Rosé.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Passoã Loco</div>
+              <div class="cocktail-name">Spritz Floral & Rosé</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                4 cl Liqueur Fruits de la Passion + 2 cl Vodka + 2 cl Jus Citron
-                Vert + Allonger Limonade.
+                4 cl Aperol + 2 cl Jus Pamplemousse ou Orange + Allonger Cidre
+                Rosé.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Passion Fizz</div>
+              <div class="cocktail-name">French Apple Highball</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                3 cl Liqueur Fruits de la Passion + 3 cl Gin + 2 cl Jus Citron
-                Vert + Allonger Eau Pétillante.
+                4 cl Whisky ou Cognac + 1 cl Jus Citron Jaune + Allonger Cidre.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Passoã Sunrise</div>
+              <div class="cocktail-name">Spritz Normand</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                5 cl Liqueur Fruits de la Passion + 10 cl Jus d'Orange + 1 cl
-                Sirop de Grenadine.
+                4 cl Aperol + 3 cl Jus Pomme + Allonger Cidre (Option : Trait
+                d'eau gazeuse).
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Tropical Passion Punch</div>
+              <div class="cocktail-name">Black Velvet Normand</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                3 cl Rhum Blanc + 3 cl Liqueur Fruits de la Passion + 8 cl Jus
-                d'Ananas + 1,5 cl Jus Citron Vert.
+                4 cl Crème Cassis + Allonger Cidre.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Dirty Banana</div>
+              <div class="cocktail-name">Cidre Punch Pêche Gingembre</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                4 cl Rhum Noir + 3 cl Liqueur Banane + 2 cl Liqueur Café + 4 cl
-                Lait/Crème Coco.
+                4 cl Gin ou Vodka + 2 cl Crème Pêche + 2 cl Jus Citron Vert +
+                Allonger Cidre.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Green Punch</div>
+              <div class="cocktail-name">French Pear Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                4 cl Rhum Blanc + 3 cl Liqueur Banane + 8 cl Jus d'Ananas + 2 cl
-                Jus Citron Vert + 1 cl Grenadine (au fond).
+                4 cl Vodka ou Gin + 2 cl Jus Citron Vert + 1,5 cl Sirop Sucre +
+                Allonger Ginger Beer & Poiré.
               </div>
             </div>
             <div class="cocktail-item">
-              <div class="cocktail-name">Green Sun</div>
+              <div class="cocktail-name">Norman Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                4 cl Liqueur Banane + 10 cl Jus d'Orange + 1 cl Jus Citron Vert.
-              </div>
-            </div>
-            <div class="cocktail-item">
-              <div class="cocktail-name">Green Island</div>
-              <div class="cocktail-recipe">
-                3 cl Liqueur Banane + 3 cl Gin + 2 cl Jus Citron Jaune +
-                Allonger Eau Pétillante.
-              </div>
-            </div>
-            <div class="cocktail-item">
-              <div class="cocktail-name">Green Lantern</div>
-              <div class="cocktail-recipe">
-                4 cl Vodka + 3 cl Liqueur Banane + 10 cl Jus Orange.
-              </div>
-            </div>
-            <div class="cocktail-item">
-              <div class="cocktail-name">Green Colada</div>
-              <div class="cocktail-recipe">
-                5 cl Rhum Blanc + 3 cl Liqueur Banane + 6 cl Jus Ananas + 3 cl
-                Lait Coco.
+                4 cl Calvados, Bourbon ou Rhum + 2 cl Jus Citron Vert + 1,5 cl
+                Sirop Sucre + Allonger Cidre.
               </div>
             </div>
           </div>
@@ -1105,48 +1334,56 @@
           <div class="cocktail-list">
             <div class="cocktail-item">
               <div class="cocktail-name">Virgin Mojito</div>
+              <div class="instructions">Crushed Ice • Verre</div>
               <div class="cocktail-recipe">
                 6 f. Menthe + 2 cl Citron Vert + 1,5 cl Sirop + Ginger Beer.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Virgin Sunset</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                10 cl Jus d'Ananas + 2 cl Sirop de Grenadine au fond.
+                10 cl Jus d'Ananas + 2 cl Sirop Grenadine au fond.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Bora Bora</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 6 cl Ananas + 4 cl Orange + 1 cl Citron Jaune + 1 cl Grenadine.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Shirley Temple</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
-                12 cl Limonade + 1,5 cl Sirop de Grenadine.
+                12 cl Limonade + 1,5 cl Sirop Grenadine.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Cranberry Smash</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 8 cl Cranberry + 2 cl Citron Vert + Allonger Eau Pétillante.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Apple Smash</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 4 f. Basilic pilées + 8 cl Jus Pomme + Allonger Eau Pétillante.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Virgin Colada</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
                 10 cl Jus Ananas + 3 cl Crème Coco + 1 cl Citron Vert. Shaker.
               </div>
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Virgin Paloma</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 8 cl Jus Pamplemousse + 2 cl Citron Vert + 1,5 cl Sirop +
                 Allonger Tonic ou Eau Pétillante.
@@ -1154,6 +1391,7 @@
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Virgin Moscow Mule</div>
+              <div class="instructions">Ice Cubes • Verre</div>
               <div class="cocktail-recipe">
                 2 cl Citron Vert + 1,5 cl Sirop + 6 f. Menthe + Allonger Ginger
                 Beer.
@@ -1161,9 +1399,10 @@
             </div>
             <div class="cocktail-item">
               <div class="cocktail-name">Virgin Passion</div>
+              <div class="instructions">Ice Cubes • Shaker</div>
               <div class="cocktail-recipe">
-                4 cl Jus Ananas + 4 cl Jus Orange + 4 cl Jus Fruits de la
-                Passion + 1 trait Citron Vert
+                4 cl Jus Ananas + 4 cl Jus Orange + 4 cl Jus Fruits Passion + 1
+                trait Jus Citron Vert.
               </div>
             </div>
           </div>
@@ -1172,7 +1411,7 @@
       <div class="page-number">- 12 -</div>
     </div>
 
-    <!-- PAGE 13: INGRÉDIENTS -->
+    <!-- PAGE BONUS: INGRÉDIENTS -->
     <div class="menu-page">
       <div class="page-border"></div>
       <div class="page-content">
@@ -1186,7 +1425,8 @@
             Liqueur de Banane (Pisang) - Liqueur Fruits de la Passion (Passoã) -
             Liqueur de Café (Kahlúa) - Crème / Liqueur de Pêche (Peach Schnapps)
             - Crème de Cassis - Amaretto - Campari - Aperol - Vermouth Rouge
-            (style Martini rouge) - Angostura Bitters<br /><br />
+            (style Martini rouge) - Angostura Bitters - Cidre (classique + rosé)
+            - Poiré<br /><br />
 
             Cola - Ginger Beer - Ginger Ale - Eau Pétillante - Tonic - Limonade
             (Sprite / 7Up) - Espresso / Café frais - Jus de Citron Vert (frais)
@@ -1206,7 +1446,7 @@
           </div>
         </div>
       </div>
-      <div class="page-number">- 13 -</div>
+      <div class="page-number">- 0 -</div>
     </div>
 
     <!-- SCRIPT DE BASCULEMENT DE PROFILE -->
@@ -1219,3 +1459,12 @@
     </script>
   </body>
 </html>
+
+<!-- <div class="cocktail-item">
+  <div class="cocktail-name"></div>
+  <div class="cocktail-recipe">
+  </div>
+</div> -->
+
+<!-- Glace : Ice Cubes (Glaçons) ou Crushed Ice (Glace pilée) ou No Ice (sans glace / servi frais).
+Méthode : Shaker, Verre, Remué, ou Dry Shake & Ice (shaker à sec puis avec glace). -->
