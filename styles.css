@@ -147,7 +147,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: var(--accent-color);
-  margin: 0 0 4mm 0;
+  margin-bottom: 4px;
   text-align: center;
   font-weight: bold;
 }
@@ -155,7 +155,7 @@ body {
 .section-subtitle {
   font-style: italic;
   color: var(--muted-text);
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   line-height: 1.2;
   text-align: center;
 }
