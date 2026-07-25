@@ -1,0 +1,263 @@
+/* --- VARIABLES DE THÈMES --- */
+body.theme-dark {
+  --bg-color: #1a1a1a;
+  --text-color: #f5f5f5;
+  --accent-color: #d4af37;
+  --muted-text: #cccccc;
+}
+
+body.theme-light {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --accent-color: #000000;
+  --muted-text: #555555;
+}
+
+/* --- RÈGLES GÉNÉRALES --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  background-color: #333333; /* Fond d'écran neutre */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* BARRE DE CONTRÔLE (Écran uniquement) */
+.control-panel {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.control-panel select,
+.control-panel button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+/* --- STRUCTURE D'UNE PAGE --- */
+.menu-page {
+  position: relative;
+  margin: 20px auto;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  page-break-after: always;
+  break-after: page;
+  overflow: hidden;
+}
+
+.page-border {
+  position: absolute;
+  top: 8mm;
+  bottom: 8mm;
+  left: 8mm;
+  right: 8mm;
+  border: 1.5px solid var(--accent-color);
+  outline: 1px solid var(--accent-color);
+  outline-offset: -5px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.page-number {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--accent-color);
+  font-style: italic;
+  z-index: 20;
+}
+
+/* --- COUVERTURE --- */
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.cover h1 {
+  letter-spacing: 4px;
+  color: var(--accent-color);
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 2px double var(--accent-color);
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+.cover .subtitle {
+  font-size: 1.4em;
+  font-style: italic;
+  color: var(--text-color);
+  margin-top: 15px;
+  letter-spacing: 2px;
+}
+
+.cover .ornament {
+  font-size: 1.2em;
+  color: var(--accent-color);
+  margin: 20px 0;
+  letter-spacing: 8px;
+}
+
+/* --- SECTIONS ET COCKTAILS --- */
+.section-block {
+  break-inside: avoid;
+}
+
+.section-title {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent-color);
+  margin: 0 0 4mm 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.section-subtitle {
+  font-style: italic;
+  color: var(--muted-text);
+  margin-bottom: 12px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.ingredients {
+  line-height: 1.3;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.cocktail-list {
+  margin-bottom: 5px;
+}
+
+.cocktail-item {
+  margin-bottom: 4mm;
+  break-inside: avoid;
+}
+
+.cocktail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+
+.cocktail-name {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.instructions {
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border: 1px solid var(--accent-color);
+  border-radius: 3px;
+  color: var(--text-color);
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.cocktail-recipe {
+  color: var(--text-color);
+  line-height: 1.2;
+}
+
+.separator {
+  text-align: center;
+  margin: 8px 0;
+  color: var(--accent-color);
+  font-size: 10pt;
+  break-inside: avoid;
+}
+
+/* --- FORMAT A4 (DÉFAUT) --- */
+body.format-a4 .menu-page {
+  width: 210mm;
+  height: 297mm;
+  padding: 18mm 20mm 16mm 20mm;
+  font-size: 10pt;
+}
+
+body.format-a4 .cover h1 { font-size: 28pt; }
+body.format-a4 .section-title { font-size: 20pt; }
+body.format-a4 .section-subtitle { font-size: 16pt; }
+body.format-a4 .cocktail-name { font-size: 14pt; }
+body.format-a4 .cocktail-recipe { font-size: 12pt; }
+body.format-a4 .ingredients { font-size: 12pt; line-height: 1.5; }
+body.format-a4 .page-number { bottom: 14mm; font-size: 9pt; }
+
+/* --- OVERRIDES FORMAT A5 --- */
+body.format-a5 .menu-page {
+  width: 148mm;
+  height: 210mm;
+  padding: 12mm 14mm 10mm 14mm;
+  font-size: 8.5pt;
+}
+
+body.format-a5 .cover h1 { font-size: 20pt; }
+body.format-a5 .section-title { font-size: 16pt; }
+body.format-a5 .section-subtitle { font-size: 14pt; margin-bottom: 6px; }
+body.format-a5 .cocktail-item { margin-bottom: 2.5mm; }
+body.format-a5 .cocktail-name { font-size: 11pt; }
+body.format-a5 .cocktail-recipe { font-size: 9.5pt; }
+body.format-a5 .ingredients { font-size: 10pt; }
+body.format-a5 .page-number { bottom: 10mm; font-size: 8pt; }
+
+/* --- GESTION IMPRESSION --- */
+@media print {
+  .control-panel {
+    display: none !important;
+  }
+
+  body {
+    background-color: transparent;
+  }
+
+  .menu-page {
+    margin: 0;
+    box-shadow: none;
+  }
+}
