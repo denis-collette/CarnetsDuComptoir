@@ -1931,23 +1931,25 @@
     <!-- SCRIPT DE BASCULEMENT DE PROFILE -->
     <script>
       const viewSelect = document.getElementById("viewSelect");
+      const formatSelect = document.getElementById("formatSelect");
+      const themeSelect = document.getElementById("themeSelect");
+
+      // Fonction globale de mise à jour qui préserve TOUS les paramètres
+      function updateProfile() {
+        const view =
+          viewSelect.value === "customer" ? "view-customer" : "view-bartender";
+        const format = formatSelect.value;
+        const theme = themeSelect.value;
+
+        // On applique les 3 classes en même temps sans en écraser une seule
+        document.body.className = `${view} ${format} ${theme}`;
+      }
 
       // Écouteur de changement de vue
-      viewSelect.addEventListener("change", (e) => {
-        document.body.classList.remove("view-bartender", "view-customer");
-        document.body.classList.add(
-          e.target.value === "customer" ? "view-customer" : "view-bartender",
-        );
-      });
+      viewSelect.addEventListener("change", updateProfile);
 
-      // Initialisation au chargement
-      document.body.classList.add("view-customer");
-
-      function updateProfile() {
-        const format = document.getElementById("formatSelect").value;
-        const theme = document.getElementById("themeSelect").value;
-        document.body.className = `${format} ${theme}`;
-      }
+      // Initialisation complète au chargement de la page
+      document.addEventListener("DOMContentLoaded", updateProfile);
     </script>
   </body>
 </html>
