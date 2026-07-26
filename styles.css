@@ -327,6 +327,10 @@ body.view-customer .description {
   line-height: 1.3;
 }
 
+body.view-customer #infobar {
+  display: none !important;
+}
+
 /* --- Mode Barman --- */
 body.view-bartender .description {
   display: none !important;
